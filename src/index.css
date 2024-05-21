@@ -1,3 +1,27 @@
 *{
   margin: 0;
+  font-family: sans-serif;
+}
+.home_style{
+  text-align: center;
+}
+.home_style h1{
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+.home_style h5{
+  margin-bottom: 0.5em;
+}
+.home_style hr{
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 0.5em;
+  margin-bottom: 5em;
+}
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5em;
+  margin: 0 1em 0 1em;
 }
