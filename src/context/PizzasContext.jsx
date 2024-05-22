@@ -16,7 +16,8 @@ const PizzasProvider = ({children}) => {
 
             const capitalizedPizzas = response.map(pizza => ({
                 ...pizza,
-                name: capitalizeFirstLetter(pizza.name)
+                name: capitalizeFirstLetter(pizza.name),
+                ingredients: pizza.ingredients.map(ingredient => capitalizeFirstLetter(ingredient))
             }))
 
             setPizzas(capitalizedPizzas)

@@ -5,23 +5,56 @@
 .home_style{
   text-align: center;
 }
+.banner_style {
+  position: relative;
+  background-image: url('./assets/imgs/pizza-img.jpg');
+  padding-bottom: 0.5em;
+  background-size: cover;
+  background-position: center;
+}
+.banner_style::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según lo oscuro que desees */
+  z-index: 1;
+}
 .home_style h1{
-  margin-top: 1em;
+  padding-top: 1em;
   margin-bottom: 0.5em;
+  color: white;
 }
 .home_style h5{
   margin-bottom: 0.5em;
+  color: white;
 }
-.home_style hr{
+.home_style h1,
+.home_style h5 {
+  position: relative;
+  z-index: 2; /* Asegúrate de que el texto esté encima de la superposición */
+}
+.hr_style{
+  border: none;
+  border-top: 3px solid white;
   width: 50%;
   margin: 0 auto;
   margin-top: 0.5em;
-  margin-bottom: 5em;
+  margin-bottom: 2em;
 }
 .container{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 5em;
-  margin: 0 1em 0 1em;
+  gap: 6em;
+  margin: 2em 1em 0 1em;
+  padding-bottom: 3em;
+
+}
+
+/* CARDPIZZA */
+.hr_card{
+  margin-bottom: 0.5em;
 }

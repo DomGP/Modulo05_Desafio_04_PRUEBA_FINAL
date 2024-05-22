@@ -10,9 +10,11 @@ const Home = () => {
 
     return (
         <div className='home_style'>
-            <h1>¡Pizzería Mamma Mia!</h1>
-            <h5>¡Tenemos las mejores pizzas que podrás encontrar!</h5>
-            <hr />
+            <div className='banner_style'>
+                <h1>¡Pizzería Mamma Mia!</h1>
+                <h5>¡Tenemos las mejores pizzas que podrás encontrar!</h5>
+                <hr className='hr_style'/>
+            </div>
             <div className="container">
                 {
                     pizzas && pizzas.map(pizza => (
