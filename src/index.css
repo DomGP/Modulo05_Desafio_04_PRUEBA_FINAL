@@ -2,6 +2,10 @@
   margin: 0;
   font-family: sans-serif;
 }
+.title_nav{
+  text-decoration: none;
+  color: white;
+}
 .home_style{
   text-align: center;
 }
@@ -57,4 +61,50 @@
 /* CARDPIZZA */
 .hr_card{
   margin-bottom: 0.5em;
+}
+
+/* PIZZA DETALLE */
+.container_detalle{
+  margin: 5em 5em 0 5em;
+}
+.flex_style{
+  display: flex;
+}
+.info_style{
+  border: 2px solid lightgrey;
+  padding: 2em;
+}
+.hrInfo{
+  border-top: 2px solid lightgrey;
+  margin: 1em 0 1em 0;
+}
+.price_style{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* DETALLE CARRITO */
+.carrito_style{
+  background-color: rgb(227, 227, 227);
+  border-radius: 10px;
+  padding: 1em;
+}
+.list_style{
+  background-color: white;
+  margin-top: 0.5em;
+  padding: 1em;
+  border-radius: 10px;
+}
+.flex_style{
+  display: flex;
+  justify-content: space-between;
+  border-bottom:2px solid lightgray;
+}
+.first_style{
+  display: flex;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+.first_style img{
+  padding-right: 0.5em ;
 }

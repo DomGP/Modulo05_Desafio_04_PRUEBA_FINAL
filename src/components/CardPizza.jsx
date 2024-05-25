@@ -1,4 +1,9 @@
 import React from 'react'
+import { useState, useContext, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { PizzasContext } from '../context/PizzasContext';
+
+//MATERIAL
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -12,10 +17,15 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LocalPizzaIcon from '@mui/icons-material/LocalPizza';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
-/* import { useContext } from 'react';
-import { PizzasContext } from '../context/PizzasContext'; */
-
 const CardPizza = ({pizza}) => {
+
+    const navigate = useNavigate();
+    const { addToCart } = useContext(PizzasContext)
+
+    const pizzaDetalle = () => {
+        const pizzaNameUrl = pizza.name.replace(/\s+/g, '-').toLowerCase();
+        navigate(`/pizza/${pizzaNameUrl}`)
+    }
 
     return (
         <Card 
@@ -63,7 +73,7 @@ const CardPizza = ({pizza}) => {
                     fontSize:25,
                     mt:3
                 }}>
-            ${pizza.price}
+            ${pizza.price.toLocaleString("de-DE")}
             </Typography>
         </CardContent>
         <CardActions 
@@ -72,10 +82,12 @@ const CardPizza = ({pizza}) => {
                 mr:3,
                 ml:3
             }}>
-            <Button 
+            <Button
+                onClick={pizzaDetalle}
                 variant='contained'
                 color='info'>Ver más <VisibilityIcon sx={{ml:1}}/></Button>
             <Button 
+                onClick={() => addToCart(pizza)}
                 variant='contained'
                 color='error'>Añadir <ShoppingCartIcon sx={{ml:1}}/></Button>
         </CardActions>
@@ -84,4 +96,4 @@ const CardPizza = ({pizza}) => {
     )
 }
 
-export default CardPizza
+export default CardPizza;

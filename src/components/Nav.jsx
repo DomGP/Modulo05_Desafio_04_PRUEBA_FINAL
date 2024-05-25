@@ -1,4 +1,9 @@
-import React from 'react'
+import React from 'react';
+import { useContext } from 'react';
+import { PizzasContext } from '../context/PizzasContext';
+import { Link, useNavigate } from 'react-router-dom';
+
+//MATERIAL
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,6 +15,13 @@ import LocalPizzaIcon from '@mui/icons-material/LocalPizza';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Nav = () => {
+    const {carrito} = useContext(PizzasContext)
+    const total = carrito.reduce((a, {count, price}) => a + price * count, 0);
+
+    const navigate = useNavigate();
+    const cartView = () => {
+        navigate('/carrito')
+    }
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -29,13 +41,20 @@ const Nav = () => {
             </IconButton>
             <LocalPizzaIcon
                 sx={{mr:1}} />
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                
+            <Typography 
+                component={Link}
+                className='title_nav'
+                to='/'
+                variant="h6" 
+                sx={{ flexGrow: 1 }}>
                 Pizzería Mamma Mia!
             </Typography>
-            <Button color="inherit">
+            <Button 
+                onClick={cartView}
+                color="inherit">
                 <ShoppingCartIcon sx={{mr:1}} />
-                $0</Button>
+                Total: ${ total.toLocaleString("de-DE")}
+            </Button>
             </Toolbar>
         </AppBar>
         </Box>

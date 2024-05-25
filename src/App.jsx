@@ -25,7 +25,7 @@ function App() {
           path='/carrito'
           element={<Carrito/>}/>
         <Route
-          path='/pizza/:id'
+          path='/pizza/:name'
           element={<Pizza/>}/>
       </Routes>
     </>

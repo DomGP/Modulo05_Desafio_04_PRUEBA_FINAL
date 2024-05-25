@@ -3,12 +3,13 @@ import { createContext, useEffect, useState } from "react";
 export const PizzasContext = createContext();
 
 const PizzasProvider = ({children}) => {
-    const [pizzas, setPizzas] = useState([])
+    const [pizzas, setPizzas] = useState([]);
+    const [carrito, setCarrito] = useState([])
     
+    //FUNCIONES PARA OBTENER LAS PIZZAS
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
-
     const getData = async() => {
         try{
             const data = await fetch('/pizzas.json')
@@ -30,8 +31,26 @@ const PizzasProvider = ({children}) => {
         getData()
     }, [])
 
+    //FUNCION PARA CARRITO
+    const addToCart = ({ id, price, name, img}) => {
+        const productoEncontradoIndex = carrito.findIndex((p) => p.id === id);
+        const producto = { id, price, name, img, count:1 };
+
+        if(productoEncontradoIndex >= 0) {
+            carrito[productoEncontradoIndex].count++;
+            setCarrito([...carrito]);
+        } else {
+            setCarrito([...carrito, producto]);
+        }
+    };
+
+    const increment = (i) => {
+        carrito[i].count++;
+        setCarrito([...carrito]);
+    }
+
     return (
-        <PizzasContext.Provider value = {{pizzas, setPizzas}} >
+        <PizzasContext.Provider value = {{pizzas, setPizzas, carrito, setCarrito, addToCart,increment}} >
             {children}
         </PizzasContext.Provider>
     )
