@@ -112,6 +112,9 @@
   padding-right: 0.5em ;
 }
 @media(max-width:768px) {
+  .container_detalle{
+    margin: 3em 2em 3em 2em;
+  }
   .flex_style{
     display: flex;
     flex-direction: column;
