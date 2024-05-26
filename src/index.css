@@ -70,6 +70,9 @@
 .flex_style{
   display: flex;
 }
+.img_pizza{
+  width: 350px;
+}
 .info_style{
   border: 2px solid lightgrey;
   padding: 2em;
@@ -107,4 +110,13 @@
 }
 .first_style img{
   padding-right: 0.5em ;
+}
+@media(max-width:768px) {
+  .flex_style{
+    display: flex;
+    flex-direction: column;
+  }
+  .img_pizza{
+    width: auto;
+  }
 }

@@ -28,7 +28,7 @@ const Pizza = () => {
     <div className='container_detalle'>
     {pizza ? (
       <div className='flex_style'>
-        <img src={pizza.img} alt={pizza.name} />
+        <img src={pizza.img} className='img_pizza' alt={pizza.name} />
         <div className='info_style'>
           <Typography variant="h4">
             {pizzaName}
@@ -53,7 +53,8 @@ const Pizza = () => {
                   <ListItemIcon sx={{minWidth:30}}>
                     <LocalPizzaIcon />
                   </ListItemIcon>
-                  <ListItemText primary={ingredient}/>
+                  <ListItemText 
+                  primary={ingredient}/>
                 </ListItem>
                 ))
             }
