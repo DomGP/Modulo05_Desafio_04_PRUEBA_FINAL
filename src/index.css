@@ -111,6 +111,21 @@
 .first_style img{
   padding-right: 0.5em ;
 }
+.second_style{
+  display: flex;
+}
+/* NOT FOUND */
+.notfound{
+  /* background-image: url('./assets/imgs/notfound.jpg'); */
+  width: 100%;
+  height: 100vh;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
+
+
 @media(max-width:768px) {
   .container_detalle{
     margin: 3em 2em 3em 2em;

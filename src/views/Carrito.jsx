@@ -13,7 +13,7 @@ import LocalPizzaIcon from '@mui/icons-material/LocalPizza';
 
 const Carrito = () => {
 
-  const { carrito } = useContext(PizzasContext)
+  const { carrito, increment, decrement } = useContext(PizzasContext)
   const total = carrito.reduce((a, pizza) => a + pizza.price * pizza.count, 0);
   const navigate = useNavigate()
   
@@ -39,23 +39,27 @@ const Carrito = () => {
                     >{pizza.name}</Typography>
                 </div>
 
-                <div className="d-flex justify-content-end align-items-center">
-                  <Typography sx={{mt:3}}>
+                <div className="second_style">
+                  <Typography sx={{mt:4}}>
                     ${(pizza.price * pizza.count).toLocaleString("de-DE")}
                   </Typography>
-                  {/* <button
-                    className="btn btn-danger"
+                  <Button
+                    variant='contained'
+                    color='error'
+                    sx={{mt:3, mb:3, ml:1}}
                     onClick={() => decrement(i)}
                   >
                     -
-                  </button>
-                  <b className="mx-2">{producto.count}</b>
-                  <button
-                    className="btn btn-primary"
+                  </Button>
+                  <Typography 
+                    sx={{mt:4, mr:1, ml:1, fontWeight:'bold'}}>{pizza.count}</Typography>
+                  <Button
+                    variant='contained'
+                    sx={{mt:3, mb:3}}
                     onClick={() => increment(i)}
                   >
                     +
-                  </button> */}
+                  </Button>
                 </div>
               </div>
           ))}

@@ -49,8 +49,18 @@ const PizzasProvider = ({children}) => {
         setCarrito([...carrito]);
     }
 
+    const decrement = (i) => {
+        const { count } = carrito[i];
+        if(count === 1){
+            carrito.splice(i,1);
+        }else{
+            carrito[i].count--;
+        }
+        setCarrito([...carrito]);
+    }
+
     return (
-        <PizzasContext.Provider value = {{pizzas, setPizzas, carrito, setCarrito, addToCart,increment}} >
+        <PizzasContext.Provider value = {{pizzas, setPizzas, carrito, setCarrito, addToCart,increment, decrement}} >
             {children}
         </PizzasContext.Provider>
     )

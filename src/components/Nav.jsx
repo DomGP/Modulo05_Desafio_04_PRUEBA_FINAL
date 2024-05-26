@@ -35,6 +35,8 @@ const Nav = () => {
                 color="inherit"
                 aria-label="menu"
                 sx={{ mr: 2 }}
+                component={Link}
+                to='/comodin'
             >
                 <MenuIcon 
                 sx = {{}}/>

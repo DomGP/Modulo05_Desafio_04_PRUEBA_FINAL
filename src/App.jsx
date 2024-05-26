@@ -7,6 +7,7 @@ import Nav from './components/Nav'
 import Home from './views/Home'
 import Pizza from './views/Pizza'
 import Carrito from './views/Carrito'
+import Comodin from './views/Comodin'
 
 //CSS
 import './App.css'
@@ -27,6 +28,9 @@ function App() {
         <Route
           path='/pizza/:name'
           element={<Pizza/>}/>
+        <Route
+          path='/comodin'
+          element={<Comodin/>}/>
       </Routes>
     </>
   )
