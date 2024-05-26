@@ -25,7 +25,7 @@ const Carrito = () => {
           {carrito.map((pizza, i) => (
             <div
                 key={i}
-                className='flex_style'
+                className='flex_styleCarrito'
               >
                 <div className="first_style">
                   <img

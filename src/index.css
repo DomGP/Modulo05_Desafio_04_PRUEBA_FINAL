@@ -98,7 +98,7 @@
   padding: 1em;
   border-radius: 10px;
 }
-.flex_style{
+.flex_styleCarrito{
   display: flex;
   justify-content: space-between;
   border-bottom:2px solid lightgray;
