@@ -13,7 +13,7 @@ const Home = () => {
             <div className='banner_style'>
                 <h1>¡Pizzería Mamma Mia!</h1>
                 <h5>¡Tenemos las mejores pizzas que podrás encontrar!</h5>
-                <hr className='hr_style'/>
+                <div className='hr_style'></div>
             </div>
             <div className="container">
                 {
