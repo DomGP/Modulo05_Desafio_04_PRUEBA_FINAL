@@ -13,7 +13,7 @@ const Comodin = () => {
     return (
         <div className='container'>
             <div className='comodin'>
-                <img src='/assets/imgs/notfound.jpg' alt="Imagen no encontrada" />
+                <img src='/assets/imgs/notfound.jpg' className='img_comodin' alt="Imagen no encontrada" />
                 {/* <img src='./src/assets/imgs/notfound.jpg' alt="Imagen no encontrada" /> */}
                 <Button
                     variant='contained'
